@@ -1,0 +1,144 @@
+Initial Call : 4:09 PM (With Token refresh lifetime = 5 mins) 
+
+Authorize Call : 
+https://us1a.app.anaplan.com/auth/authorize?client_id=GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb&response_type=code&state=hostname%3Dhttp%3A%2F%2Flocalhost%3A8888%2Cinstance_id%3D0339e36c-240a-40b7-8486-1dcb131ad4f3%2Cuse_cdn%3DFalse&redirect_uri=https%3A%2F%2Fsnap.elastic.snaplogicdev.com%2Fapi%2F1%2Frest%2Fadmin%2Foauth2callback%2Fanaplan
+
+Response 
+https://snap.elastic.snaplogicdev.com/api/1/rest/admin/oauth2callback/anaplan?code=Nm-PQCumjK6WugDnBf_mhiAZOiuszzzUJNbGD1DxnTCbU&state=hostname%3Dhttp%3A%2F%2Flocalhost%3A8888%2Cinstance_id%3D0339e36c-240a-40b7-8486-1dcb131ad4f3%2Cuse_cdn%3DFalse
+
+Token Call : 
+curl --location 'https://us1a.app.anaplan.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __is_sip__=true; sessId=49ba2e2b6ea7509; did=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc; did_compat=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc' \
+--data '{
+    "grant_type": "authorization_code",
+    "code": "Nm-PQCumjK6WugDnBf_mhiAZOiuszzzUJNbGD1DxnTCbU",
+    "client_id":"GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb",
+    "client_secret":"XXXXXXXXXXXXXXXXXXXXXXXX-ReqYH7fXrF9bH7faJ3IXcmlzak6i-X1",
+    "redirect_uri": "https://snap.elastic.snaplogicdev.com/api/1/rest/admin/oauth2callback/anaplan"
+}'
+
+Response : 
+{
+    "access_token": "6SLQE+MBzhHN2VaS5VYrug==.IV4bWxeUOIxYsBbq/o/XT4oX6tZo92arXM/ONYlDSj9OSNKt6dYaDsZ1L4KVCDfiDHPsTM712JYfTJ/Gk187RdVZir8kyRiDqG+gpoP9n3eSDSik1xLD1IzbjZ387zAu4fbCGU1LyRVMClKQW5NbeDkjW5lHW38Urm/z/BKDZQVJ50+UMdkS84dqgTTkRgFhTQ2ZsSUjlCxhQMq9YK1UgVjqU+W5YGEZCDJTi1/+FrcPiun/aVdH+lkDT+PzTpYW+3yFxId1ztuj9LPD4O9D/w/janw/9HTf6zyRwY//RTRCCYVKF09wbs9hh59AguneZpbUnT6IOJXzumZBg1fHR/7H8y0tkHj9+dgrx2yBUzlyQLpprQ+zYF7Rr6GjqInCJ/cOzW7TvmXDmNKIktMRZ9rj2tL3x6qW/K3R7skXd+wVue1fRZeqNSB/znOD7HRkjx2DOdWQHObSUS9tfwhqb0tiu2L+Nq4CWHXrTQSUAQBEXJGUTIQBqma/nLZxfb6FElM/jAOd+Vj5dBP2mIcXbQ==.6lgkwSsnb5GqZhTpZ/qt5UIvIAQrZpiENauWdQ7oLI4=",
+    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16WkROekEzTTBNMVF6TTNNekl3UkVFeVJrVTBOak5GUkRsRVJEUXpNVFV4UlRKQ01UVkZSQSJ9.eyJodHRwczovL2FuYXBsYW4uY29tL2Nvbm5lY3Rpb24iOiJEQi1wcm94eSIsImh0dHBzOi8vYW5hcGxhbi5jb20vcHJvdG9jb2wiOiJVSURQV0QiLCJlbWFpbCI6InNuYXAtdGVhbUBzbmFwbG9naWMuY29tIiwiaXNzIjoiaHR0cHM6Ly9pYW0uYW5hcGxhbi5jb20vIiwiYXVkIjoiR25mRlM3YVBGVThGbElwcUFKTnUxM2pSTm1KMW9wdGIiLCJpYXQiOjE3MjQwOTgxNjAsImV4cCI6MTcyNDEzNDE2MCwic3ViIjoiYXV0aDB8OGE4MWIwOGU1MDU0MzM0ZjAxNTA4YzhmMjFmYzczM2YiLCJzaWQiOiJqUVFUYVpCWHFHRXF5eDlDVkpoSkVmdmxfbnd2eVpfVCIsIm5vbmNlIjoiaG9zdG5hbWU9aHR0cDovL2xvY2FsaG9zdDo4ODg4LGluc3RhbmNlX2lkPTAzMzllMzZjLTI0MGEtNDBiNy04NDg2LTFkY2IxMzFhZDRmMyx1c2VfY2RuPUZhbHNlIn0.I_Kn_KkqdfIkJJlOLvYoZDuiGMLGdeHgmIXOwKRsaP9TP5ZBxT0ibn2Hb9D86JZGnQFepxpMA5hchjkvz8OCvcR_yNy06GlXDQciTrjrgak4q2VcAbIfBfNGRKF0kqiIx43gwfU6Pp33sAryCFyRhOQcUarxbr26pFRscKnq_hT8yQ1AugMSSenYj2PPSJJ-1gbttSQXoyMrMG-WrQQaAvrP-Ws9tXmeBlGpgFz47btflCyj8116lqTAc3IKQGRIgn3b9iPhhXTBQ913blxopehUljFNEX8-fZnPfg45abe9OQjWE6-pgnRR0UsOVPUERaIW9_jrgHSIHzp69DL59A",
+    "refresh_token": "v1.MZ3x4CmgBt3L0KBYkOaeKu25umLrbCbdEKYCvJRmgY8ivp1wADoMxTQKL9Vr02VREHqhgWQDVGiS_0iy9A5TatM",
+    "scope": "openid email offline_access",
+    "expires_in": 2100,
+    "token_type": "Bearer"
+}
+
+
+
+First Refresh : 4:10 PM
+
+curl --location 'https://us1a.app.anaplan.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __is_sip__=true; sessId=49ba2e2b6ea7509; did=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc; did_compat=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc' \
+--data '{
+    "grant_type": "refresh_token",
+   "client_id":"GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb",
+    "client_secret":"XXXXXXXXXXXXXXXXXXXXXXXX-ReqYH7fXrF9bH7faJ3IXcmlzak6i-X1",
+    "refresh_token": "v1.MZ3x4CmgBt3L0KBYkOaeKu25umLrbCbdEKYCvJRmgY8ivp1wADoMxTQKL9Vr02VREHqhgWQDVGiS_0iy9A5TatM"
+}'
+
+Response : 
+{
+    "access_token": "t3AseYw9GOCNNHI412MJeg==.HPKVAA6KBw86X+6+LbtRg+VfaVO49iA0rhECwg9qLq9h0ugCc9n7C9fgwYBkjm7kzcShOWk0IJ6D0GChfEEfzDX21nwWLnlsaTr7g2lnNYX8NNRbnk9Qs5Ul343le65AE5LaSZ8r400CA25xcnVXAx5fRLVoMuDG57YMsZftZIfYfgfF4Y3FAI0F3T+H+wubOEiQ/vtzZ2gd8y4/TUEaGaZgnuWz/LRO3Ke9WUwIRobLzo8eQRW/cmxitPXuv8m/M/5kxSiV+cCeKqQtAvVODDu/U0Ea+4FCF34MBVxOzvoOd7Jcv+H5u9/4IRyhvFWYPWsgn+c0oi9U7LDq/xHBdDx061aToSYu5ye9L0QbJl3ljM+t0kO65MUs/ogb/nIfVuvaCyCC8eXBUlHTROfiMaqSC0nAwIvK+tgU2gyfxSHxnbfdGqOd+JQDL40xtegCl4TtYd5kT0nq2lXtUGx0l1JJ3nt6xWvFbhN6IdwbAH3uCW6prjSntBLndnzxLF2A8hDgaW/BRPkwQSF5MTXzCw==.ODxNSU0oAYKhqF3KLugiAzhpWKwdB4Jd9NOqv5pen6Q=",
+    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16WkROekEzTTBNMVF6TTNNekl3UkVFeVJrVTBOak5GUkRsRVJEUXpNVFV4UlRKQ01UVkZSQSJ9.eyJodHRwczovL2FuYXBsYW4uY29tL2Nvbm5lY3Rpb24iOiJEQi1wcm94eSIsImh0dHBzOi8vYW5hcGxhbi5jb20vcHJvdG9jb2wiOiJVSURQV0QiLCJlbWFpbCI6InNuYXAtdGVhbUBzbmFwbG9naWMuY29tIiwiaXNzIjoiaHR0cHM6Ly9pYW0uYW5hcGxhbi5jb20vIiwiYXVkIjoiR25mRlM3YVBGVThGbElwcUFKTnUxM2pSTm1KMW9wdGIiLCJpYXQiOjE3MjQwOTgyMDYsImV4cCI6MTcyNDEzNDIwNiwic3ViIjoiYXV0aDB8OGE4MWIwOGU1MDU0MzM0ZjAxNTA4YzhmMjFmYzczM2YiLCJzaWQiOiJqUVFUYVpCWHFHRXF5eDlDVkpoSkVmdmxfbnd2eVpfVCJ9.ZUKHRKuuP2XveZBRCzRaTVdzQafNGuPcbDQTd2oFRKJ7n5LK1wvaGOfO1kQhN8iv0uHe6oBARD5jlKH4BXaiVkfnXYAHhgUbHnSxapkuZYFoc3nqbQyYXkHJ-IA9RRNyDaJiiW6r_pGOIV07VETY2__P6bsiRAsU1k30bVv2fb3CJCXSWj-pZru99DXru2OrrLHFQwdoo5aSmLUFCdAMOX-G0ETSxjafjT9z-94_m7eSSESA8eBI4CB8gIdozCb7l-7NfXtD2yS0yUw0S53wnliMrmndAgvu5EOGqGnGSqYmjgH7pqzwwFRoq43IF4yLxNHMRtef-nGIdvhzYdjNew",
+    "refresh_token": "v1.Mp3x4CmgBt3L0KBYkOaeKu37Z8onM5cmq7yp9eX14zGMlcAOHnME9UUuoyFeKsq4uKKLfrA5MBW8mUqgOO3x2x0",
+    "scope": "openid email offline_access",
+    "expires_in": 2100,
+    "token_type": "Bearer"
+}
+
+
+Second Refresh : 4:11PM
+
+curl --location 'https://us1a.app.anaplan.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __is_sip__=true; sessId=49ba2e2b6ea7509; did=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc; did_compat=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc' \
+--data '{
+    "grant_type": "refresh_token",
+   "client_id":"GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb",
+    "client_secret":"XXXXXXXXXXXXXXXXXXXXXXXX-ReqYH7fXrF9bH7faJ3IXcmlzak6i-X1",
+    "refresh_token": "v1.Mp3x4CmgBt3L0KBYkOaeKu37Z8onM5cmq7yp9eX14zGMlcAOHnME9UUuoyFeKsq4uKKLfrA5MBW8mUqgOO3x2x0"
+}'
+
+Response : 
+{
+    "access_token": "nhZeyhNdnL3/gq5MNpS8Og==.gdyRDqJQpiGgKrs3XfMDaAgdb8QeCYhCFGJKkkifRrzV7LtCJ0KVR3ixqeb0w0k+NeBSbbgNWNL+MJGPBTb3EyB69p0I319Fh4WPLT+uQg1JtC1Zs23F1KPKx7xNNxwh67nbNNku7hiAbWPILZ+yGU9crMNoO675TXyULNpvwrSJct5kvqrLy7JOtU4s13Woo4bfaWrHYfZ4TY9ueUVjpDCYvKJTAfHtYA3/mvKc4HoAVbBQzAbpCnp9xuuSEQW5Dok0Slr1Tl2jehGthehJtBWUEYJ2CnvHun84uPUaEqfs8AYfJmlK3wgayvMQpatAlP9p38X0JkTyaJXdnVYj/a7GTfKyWZFPS4/82gv+RvtwDzh4lTmNM5VS4oHc9j/RcBhEQ9SySOHhnT5mkCFyvmzKqnFBxmiMRoXreqFPGF+z7Q2+8a2GBD1DAaiSULsrO6d5Lla1rfyaAkOGCJAise7BbtI6oIVCPR3wZ/oSIV1ojLsow36QW/XweUu2WksxdH/9HSILDHk1l+ZICHFcZA==.cIkJHrDAKkI2LY+KGgS4p3DjMK5L2gyysVVyP+wT9ac=",
+    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16WkROekEzTTBNMVF6TTNNekl3UkVFeVJrVTBOak5GUkRsRVJEUXpNVFV4UlRKQ01UVkZSQSJ9.eyJodHRwczovL2FuYXBsYW4uY29tL2Nvbm5lY3Rpb24iOiJEQi1wcm94eSIsImh0dHBzOi8vYW5hcGxhbi5jb20vcHJvdG9jb2wiOiJVSURQV0QiLCJlbWFpbCI6InNuYXAtdGVhbUBzbmFwbG9naWMuY29tIiwiaXNzIjoiaHR0cHM6Ly9pYW0uYW5hcGxhbi5jb20vIiwiYXVkIjoiR25mRlM3YVBGVThGbElwcUFKTnUxM2pSTm1KMW9wdGIiLCJpYXQiOjE3MjQwOTgyNjksImV4cCI6MTcyNDEzNDI2OSwic3ViIjoiYXV0aDB8OGE4MWIwOGU1MDU0MzM0ZjAxNTA4YzhmMjFmYzczM2YiLCJzaWQiOiJqUVFUYVpCWHFHRXF5eDlDVkpoSkVmdmxfbnd2eVpfVCJ9.o1fnDQjyB5HnLICxKCop3K03tQk1pTJOA1-ejPU7RZqt42l_qzFC3CBk0lTYXCBdtlgzWkZRoVpTO_iGbHJ8kVu0vRSRfOifNtwezJG8HWm6KcJLssaO5kPVTMHwAVM-SZNyUh0gizQZXELrqpVnGxkyOt_yYb2rx7bEQHGL6aHHSqOQcvtJBa4T8GiXqluJOUp_FcM-GataLdxPPVS5xBDX1QNIombBtJ1ltgSaNNaE4KzlzELclPkVrmEK8TxUZtuXjuizmvr8aJlKO0RAHyg7Rd-GA8k6XhjndrcAaMT-VqFM1pYFpr2c1ysPw097DWh-7DQGHsF5I2MrS9X9-A",
+    "refresh_token": "v1.M53x4CmgBt3L0KBYkOaeKu1wniCohH5z8hWhjf3DF_bLjzb6gijTogTTXF1PFuLvY5d6NIcJrKTJjXXZmqsVzGE",
+    "scope": "openid email offline_access",
+    "expires_in": 2100,
+    "token_type": "Bearer"
+}
+
+
+
+Third Refresh : 4:12 PM
+
+curl --location 'https://us1a.app.anaplan.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __is_sip__=true; sessId=49ba2e2b6ea7509; did=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc; did_compat=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc' \
+--data '{
+    "grant_type": "refresh_token",
+   "client_id":"GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb",
+    "client_secret":"XXXXXXXXXXXXXXXXXXXXXXXX-ReqYH7fXrF9bH7faJ3IXcmlzak6i-X1",
+    "refresh_token": "v1.M53x4CmgBt3L0KBYkOaeKu1wniCohH5z8hWhjf3DF_bLjzb6gijTogTTXF1PFuLvY5d6NIcJrKTJjXXZmqsVzGE"
+}'
+
+Response : 
+
+{
+    "access_token": "WnekPLwiUkCuVpGUCrVqjg==.YL3rn0vdwAu4WaD9l3Ln/uwfM73v9txnP4m240vrzCqP7lmj81Gm2EvrfWPWK6S1o24Z2CIEquRtV+3h9c2+P2kVOQ1zZ69nhrLUEGpHU9gaN7Ikjqaoc61JFH//XyJHhtXoly5bruhhw82AYn7j2gXyoDoy7+5qDZn1B5LXJ9z9gB3Tl0oOkFOjp+hWSd/jx68J0+lLGJF4FReu4j++Av9tT5gkmQ/R339daz1GDqdGGHiw3sNIC3F8r9JoT6KUhtvtMTsgtbylVkrntXRmEcdOgXQ23upz66BtMA/YATrkNxj5/JjOGykjR7onsR1T4m2i8gow0h5cd40WqI3i1sfBavrsxcOiipM/AV84kVkelB1Lc89v5YmD9axGJhZOyaJvkm7O/YnqYSAK3vDWAiQbDMAbwOv7FoNX0+Q1wUWR9FKFIMWafaBex7eke7nPA2U/hyOt7Vn+rtPA6yKDlZuOTS+TcS8j8PCY3pd6H+miu9hYhVjbH+4WA9nVQvRHiW7j5/pCG2iihC1GNXCG9Q==.XRIwjXIRWgGmpWUT8E3gyrR/O6uH8qhOuYT+ZWz29Xk=",
+    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16WkROekEzTTBNMVF6TTNNekl3UkVFeVJrVTBOak5GUkRsRVJEUXpNVFV4UlRKQ01UVkZSQSJ9.eyJodHRwczovL2FuYXBsYW4uY29tL2Nvbm5lY3Rpb24iOiJEQi1wcm94eSIsImh0dHBzOi8vYW5hcGxhbi5jb20vcHJvdG9jb2wiOiJVSURQV0QiLCJlbWFpbCI6InNuYXAtdGVhbUBzbmFwbG9naWMuY29tIiwiaXNzIjoiaHR0cHM6Ly9pYW0uYW5hcGxhbi5jb20vIiwiYXVkIjoiR25mRlM3YVBGVThGbElwcUFKTnUxM2pSTm1KMW9wdGIiLCJpYXQiOjE3MjQwOTgzNTQsImV4cCI6MTcyNDEzNDM1NCwic3ViIjoiYXV0aDB8OGE4MWIwOGU1MDU0MzM0ZjAxNTA4YzhmMjFmYzczM2YiLCJzaWQiOiJqUVFUYVpCWHFHRXF5eDlDVkpoSkVmdmxfbnd2eVpfVCJ9.ARN5BP7YfW0rp7gqhJdVIy-ivReCu-9G4D5UKstJ0tdS5ule-4JLiWn-SswQEoqyNTz6C_wQwlcbJafBd4iMY8qnF1KZ-l7Km_drBhJW4vj4Hes52aw_kdYiz_W505SuQ8j916GAyBxEHFAXvMPf59M-mN5yRJIZ3ifTmNadkL_vJN4ft7fvA3mt8G0byMBByQqLLYFmMGw7zxlCK9KAcePeC4S_KiADO38ZMhOo4BPJcA29WxMmzpORnNR9QqNPNXwlXaiv1v3HlQEC_nbo787IJ-fuATweks2GrgmUohkcEJXuD-apEG03W8AoZnaeckCVUQ30zNojZ4y_t3uv7A",
+    "refresh_token": "v1.NJ3x4CmgBt3L0KBYkOaeKu3k1JyNAH6-AwVq5GL0GkV2lYXoH1pHK6Fw-whW1SDjcK09vvht002BxToNH9ofhrU",
+    "scope": "openid email offline_access",
+    "expires_in": 2100,
+    "token_type": "Bearer"
+}
+
+
+Fourth Refresh : 4.13PM
+
+curl --location 'https://us1a.app.anaplan.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __is_sip__=true; sessId=49ba2e2b6ea7509; did=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc; did_compat=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc' \
+--data '{
+    "grant_type": "refresh_token",
+   "client_id":"GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb",
+    "client_secret":"XXXXXXXXXXXXXXXXXXXXXXXX-ReqYH7fXrF9bH7faJ3IXcmlzak6i-X1",
+    "refresh_token": "v1.NJ3x4CmgBt3L0KBYkOaeKu3k1JyNAH6-AwVq5GL0GkV2lYXoH1pHK6Fw-whW1SDjcK09vvht002BxToNH9ofhrU"
+}'
+
+Response : 
+{
+    "access_token": "3mmv/BrqLpzS+Jetz+2avg==.+NwlVf5tkWqKLL9hvRPyRoc1PFHl/I4JLycY73eyQ8dPiqocgcfBw1sKeSenSnwzUK81AnPhkMhq5REHPx9cC79cdBHMyF0p8aIkJnSTl34UlnSKLPHl2ZBbOibrTa7cDKcExwd4DLZc7Ah9CvlXaNxeT6imeaa5gily4fdnVAOV9zzrkCdOEkGy2pT+aHrs+YcMSxcvrpTabPYoykDVX7xYKLowu1Ev3HT+9jCz6w5zdItg98avFLtD5pMXLnGpRPN5jqYsK4AArZCo7IqHsIstS80/jTrmgQ8mmtxdegSWcgpynYCZPAJw7KsuwWNYgikDlpgIdDGbdqayyhTxrFQ1TCNYWkCQjMRYhZ1UuFuI3hnMe+4WVV4k2BRxXmmdjeuJuKVg4SsUCwbIZNJmH31Wc8A6QTDrziJVfGsoNnOVVHYRQGSfezfmazVsFxAb6tWwmQeD6poYuA+w6mBHseFakC8HaTuIYaz4dLDM7HheYC1ANgnOcPamSTcTiMxHfC50qIhDcd4SEaSZ+Xpxww==.jBDufogXY4vgASmjdCu6CKL38a4Jctb1bFSP1k2khQs=",
+    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16WkROekEzTTBNMVF6TTNNekl3UkVFeVJrVTBOak5GUkRsRVJEUXpNVFV4UlRKQ01UVkZSQSJ9.eyJodHRwczovL2FuYXBsYW4uY29tL2Nvbm5lY3Rpb24iOiJEQi1wcm94eSIsImh0dHBzOi8vYW5hcGxhbi5jb20vcHJvdG9jb2wiOiJVSURQV0QiLCJlbWFpbCI6InNuYXAtdGVhbUBzbmFwbG9naWMuY29tIiwiaXNzIjoiaHR0cHM6Ly9pYW0uYW5hcGxhbi5jb20vIiwiYXVkIjoiR25mRlM3YVBGVThGbElwcUFKTnUxM2pSTm1KMW9wdGIiLCJpYXQiOjE3MjQwOTg0MzIsImV4cCI6MTcyNDEzNDQzMiwic3ViIjoiYXV0aDB8OGE4MWIwOGU1MDU0MzM0ZjAxNTA4YzhmMjFmYzczM2YiLCJzaWQiOiJqUVFUYVpCWHFHRXF5eDlDVkpoSkVmdmxfbnd2eVpfVCJ9.fMZ3n-vHqT6AgEFONhTtbpzymcvwqfj0G6kL_-4myYOV3PaVpAyYgc3SsArPqhMCybqyKqdQcA0RRiA0jvl5fB9rBq8JfgLE0pvizoKcGYQs-Mz7kpWWl2uenQpimOinRUzUMcqLdX7IZvjjzp2_l8_Zm7GVv-PBC2t8Uai6ptwVOjmV3MydVTfC9uP0_aGvOhWDwGxqAS8U_nDlKSWJT2RpJD3X4EtdmHFcM1Nek3OHNhOBcRwZbBvDJzmSF61ADR80mY0Jc4BswVeVyY47_puDxMD_OGs4c9d-AxfN6sUenrRhHvySL4CJ5zz9B0A1G1XkdZbc6ofuMz0CcPJQHg",
+    "refresh_token": "v1.NZ3x4CmgBt3L0KBYkOaeKu0ELL2X2vTzmHi-PpFmGUR-LPFZaVUrx_Si4Aj1PGGtYNoiDm5143kMyviizcEmxiQ",
+    "scope": "openid email offline_access",
+    "expires_in": 2100,
+    "token_type": "Bearer"
+}
+
+
+Fifth Refresh : 4:15 
+
+
+curl --location 'https://us1a.app.anaplan.com/oauth/token' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: __is_sip__=true; sessId=49ba2e2b6ea7509; did=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc; did_compat=s%3Av0%3A097e4d4a-9fb9-4925-b788-17799e002373.EajLHM3zMfGRhfWQpCwJQ9WRPCCxrlvym6i%2F4Bvp8oc' \
+--data '{
+    "grant_type": "refresh_token",
+    "client_id":"GnfFS7aPFU8FlIpqAJNu13jRNmJ1optb",
+    "client_secret":"XXXXXXXXXXXXXXXXXXXXXXXX-ReqYH7fXrF9bH7faJ3IXcmlzak6i-X1",
+    "refresh_token": "v1.NZ3x4CmgBt3L0KBYkOaeKu0ELL2X2vTzmHi-PpFmGUR-LPFZaVUrx_Si4Aj1PGGtYNoiDm5143kMyviizcEmxiQ"
+}'
+
+Response : 
+{
+    "error": "invalid_grant",
+    "error_description": "Unknown or invalid refresh token."
+}
